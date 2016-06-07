@@ -1,0 +1,112 @@
+﻿@model CapstoneRemastered.Models.DailyLogMileageAndFuelReport
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DailyLogMileageAndFuelReport</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateofWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateofWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tractornumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tractornumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trailernumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trailernumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pronumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pronumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Totalmilesdriven)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Totalmilesdriven)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Totalgaspurchased)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Totalgaspurchased)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Routestraveled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Routestraveled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odometerstart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odometerstart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odometerfinish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odometerfinish)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

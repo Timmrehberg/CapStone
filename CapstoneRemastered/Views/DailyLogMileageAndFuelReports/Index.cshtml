@@ -1,0 +1,109 @@
+﻿@model IEnumerable<CapstoneRemastered.Models.DailyLogMileageAndFuelReport>
+
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("ExportData", "ExportData", FormMethod.Post))
+{
+
+    <table style="background-color: white; width: 100%;">
+        <tr>
+
+           <p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tractornumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trailernumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pronumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totalmilesdriven)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Totalgaspurchased)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Routestraveled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Odometerstart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Odometerfinish)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateofWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tractornumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trailernumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pronumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Totalmilesdriven)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Totalgaspurchased)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Routestraveled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Odometerstart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Odometerfinish)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Driver }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Driver }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Driver })
+        </td>
+    </tr>
+}
+
+</table>
+        
+        <tr>
+            <td></td>
+
+            <td></td>
+            <td>
+                <input type="submit" name="btnExportLicensing" style="width: 140px;"
+                       value="Export" id="exportLicensing" class="button" />
+            </td>
+        </tr>
+    </table>
+}

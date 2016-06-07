@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CapstoneRemastered.Models.DailyLogMileageAndFuelReport>
+
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("ExportData", "ExportData", FormMethod.Post))
+{
+    <p style="background-color: red; color: white; font-size: 20pt; font-weight: bold; padding: 10px; text-align: center;">
+        Export DataTable To Excel In MVC 4
+    </p>
+    <table style="background-color: white; width: 100%;">
+        <tr>
+
+            <th style="border: 2px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.Driver)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.DateofWork)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Tractornumber)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Trailernumber)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Pronumber)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Totalmilesdriven)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Totalgaspurchased)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Routestraveled)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Odometerstart)
+            </th>
+            <th style="border: 2px solid black; text-align: center; width: 20%">
+                @Html.DisplayNameFor(model => model.Odometerfinish)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.Driver)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.DateofWork)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Owner)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Tractornumber)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Trailernumber)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Pronumber)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Totalmilesdriven)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Totalgaspurchased)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Routestraveled)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Odometerstart)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(modelItem => item.Odometerfinish)
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+
+            <td></td>
+            <td>
+                <input type="submit" name="btnExportLicensing" style="width: 140px;"
+                       value="Export" id="exportLicensing" class="button" />
+            </td>
+        </tr>
+    </table>
+}
