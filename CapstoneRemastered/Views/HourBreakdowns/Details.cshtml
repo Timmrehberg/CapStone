@@ -1,0 +1,114 @@
+﻿@model CapstoneRemastered.Models.HourBreakdown
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HourBreakdown</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoursworked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoursworked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleNumbers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleNumbers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoDriver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoDriver)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnDutyHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnDutyHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffDutyHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffDutyHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnDutyHours2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnDutyHours2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffDutyHours2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffDutyHours2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnDutyHours3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnDutyHours3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffDutyHours3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffDutyHours3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

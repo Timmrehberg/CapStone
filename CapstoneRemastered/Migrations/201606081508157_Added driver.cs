@@ -3,7 +3,7 @@ namespace CapstoneRemastered.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddedHourLog : DbMigration
+    public partial class Addeddriver : DbMigration
     {
         public override void Up()
         {

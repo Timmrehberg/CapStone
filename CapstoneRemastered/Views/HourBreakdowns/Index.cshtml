@@ -1,9 +1,9 @@
-﻿@model IEnumerable<CapstoneRemastered.Models.DailyLogMileageAndFuelReport>
+﻿@model IEnumerable<CapstoneRemastered.Models.HourBreakdown>
 
 @{
     ViewBag.Title = "Index";
 }
-@using (Html.BeginForm("ExportData", "ExportData", FormMethod.Post))
+@using (Html.BeginForm("ExportData", "ExportHoursToExcel", FormMethod.Post))
 {
 
 
@@ -19,37 +19,37 @@
                         @Html.DisplayNameFor(model => model.Driver)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.DateofWork)
+                        @Html.DisplayNameFor(model => model.Hoursworked)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Owner)
+                        @Html.DisplayNameFor(model => model.VehicleNumbers)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Tractornumber)
+                        @Html.DisplayNameFor(model => model.Signature)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Trailernumber)
+                        @Html.DisplayNameFor(model => model.CoDriver)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Pronumber)
+                        @Html.DisplayNameFor(model => model.OnDutyHours)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.State)
+                        @Html.DisplayNameFor(model => model.OffDutyHours)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Totalmilesdriven)
+                        @Html.DisplayNameFor(model => model.OnDutyHours2)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Totalgaspurchased)
+                        @Html.DisplayNameFor(model => model.OffDutyHours2)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Routestraveled)
+                        @Html.DisplayNameFor(model => model.OnDutyHours3)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Odometerstart)
+                        @Html.DisplayNameFor(model => model.OffDutyHours3)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Odometerfinish)
+                        @Html.DisplayNameFor(model => model.TotalHours)
                     </th>
                     <th></th>
                 </tr>
@@ -61,37 +61,37 @@
                             @Html.DisplayFor(modelItem => item.Driver)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.DateofWork)
+                            @Html.DisplayFor(modelItem => item.Hoursworked)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Owner)
+                            @Html.DisplayFor(modelItem => item.VehicleNumbers)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Tractornumber)
+                            @Html.DisplayFor(modelItem => item.Signature)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Trailernumber)
+                            @Html.DisplayFor(modelItem => item.CoDriver)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Pronumber)
+                            @Html.DisplayFor(modelItem => item.OnDutyHours)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.State)
+                            @Html.DisplayFor(modelItem => item.OffDutyHours)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Totalmilesdriven)
+                            @Html.DisplayFor(modelItem => item.OnDutyHours2)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Totalgaspurchased)
+                            @Html.DisplayFor(modelItem => item.OffDutyHours2)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Routestraveled)
+                            @Html.DisplayFor(modelItem => item.OnDutyHours3)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Odometerstart)
+                            @Html.DisplayFor(modelItem => item.OffDutyHours3)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Odometerfinish)
+                            @Html.DisplayFor(modelItem => item.TotalHours)
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

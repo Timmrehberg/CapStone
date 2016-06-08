@@ -11,52 +11,47 @@ using ClosedXML;
 using ClosedXML.Excel;
 using System.IO;
 
-namespace ExportDataTableToExcelInMVC4.Controllers
+namespace CapstoneRemastered.Controllers
 {
-    public class ExportDataController : Controller
+    public class ExportHoursToExcelController : Controller
     {
+        // GET: ExportHoursToExcel
         public ActionResult Index()
         {
             string constring = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constring);
-            string query = "select * From DailyLogMileageAndFuelReports";
+            string query = "select * From HourBreakdowns";
             DataTable dt = new DataTable();
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             da.Fill(dt);
             con.Close();
-            IList<DailyLogMileageAndFuelReport> model = new List<DailyLogMileageAndFuelReport>();
+            IList<HourBreakdown> model = new List<HourBreakdown>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                model.Add(new DailyLogMileageAndFuelReport()
+                model.Add(new HourBreakdown()
                 {
                     Driver = dt.Rows[i]["Driver"].ToString(),
-                    DateofWork = dt.Rows[i]["DateofWork"].ToString(),
-                    Owner = dt.Rows[i]["Owner"].ToString(),
-                    State = dt.Rows[i]["State"].ToString(),
-                    Routestraveled = dt.Rows[i]["Routestraveled"].ToString(),
-                    Totalgaspurchased = Convert.ToDouble(dt.Rows[i]["Totalgaspurchased"]),
-                    Totalmilesdriven = Convert.ToInt32(dt.Rows[i]["Totalmilesdriven"]),
-                    Tractornumber = Convert.ToInt32(dt.Rows[i]["Tractornumber"]),
-                    Trailernumber = Convert.ToInt32(dt.Rows[i]["Trailernumber"]),
-                    Pronumber = Convert.ToInt32(dt.Rows[i]["Pronumber"]),
-                    Odometerstart = Convert.ToInt32(dt.Rows[i]["Odometerstart"]),
-                    Odometerfinish = Convert.ToInt32(dt.Rows[i]["Odometerfinish"]),
-                    
-
-
-
-
-                });
+                    Hoursworked = Convert.ToInt32(dt.Rows[i]["Hoursworked"]),
+                    VehicleNumbers = dt.Rows[i]["Owner"].ToString(),
+                    Signature = dt.Rows[i]["State"].ToString(),
+                    CoDriver = dt.Rows[i]["CoDriver"].ToString(),
+                    OnDutyHours = dt.Rows[i]["OnDutyHours"].ToString(),
+                    OffDutyHours = dt.Rows[i]["OffDutyHours"].ToString(),
+                    OnDutyHours2 = dt.Rows[i]["OnDutyHours2"].ToString(),
+                    OffDutyHours2 = dt.Rows[i]["OffDutyHours2"].ToString(),
+                    OnDutyHours3 = dt.Rows[i]["OnDutyHours3"].ToString(),
+                    OffDutyHours3 = dt.Rows[i]["OffDutyHours3"].ToString(),
+                    TotalHours = dt.Rows[i]["TotalHours"].ToString(),
+    });
             }
-             return View(model);
+            return View(model);
         }
-
         public ActionResult ExportData()
         {
             String constring = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constring);
-            string query = "select * From DailyLogMileageAndFuelReports";
+            string query = "select * From HourBreakdowns";
             DataTable dt = new DataTable();
             dt.TableName = "Log";
             con.Open();
@@ -74,7 +69,7 @@ namespace ExportDataTableToExcelInMVC4.Controllers
                 Response.Buffer = true;
                 Response.Charset = "";
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                Response.AddHeader("content-disposition", "attachment;filename= MileageAndFuelReport.xlsx");
+                Response.AddHeader("content-disposition", "attachment;filename= HourBreakdown.xlsx");
 
                 using (MemoryStream MyMemoryStream = new MemoryStream())
                 {
@@ -85,7 +80,7 @@ namespace ExportDataTableToExcelInMVC4.Controllers
                 }
             }
 
-            return RedirectToAction("Index", "ExportData");
+            return RedirectToAction("Index", "ExportHoursToExcel");
         }
 
         private void releaseObject(object obj)

@@ -10,107 +10,107 @@ using CapstoneRemastered.Models;
 
 namespace CapstoneRemastered.Controllers
 {
-    public class DailyLogMileageAndFuelReportsController : Controller
+    public class HourBreakdownsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: DailyLogMileageAndFuelReports
+        // GET: HourBreakdowns
         public ActionResult Index()
         {
-            return View(db.DailyLogMileageAndFuelReports.ToList());
+            return View(db.HourBreakdowns.ToList());
         }
 
-        // GET: DailyLogMileageAndFuelReports/Details/5
+        // GET: HourBreakdowns/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport = db.DailyLogMileageAndFuelReports.Find(id);
-            if (dailyLogMileageAndFuelReport == null)
+            HourBreakdown hourBreakdown = db.HourBreakdowns.Find(id);
+            if (hourBreakdown == null)
             {
                 return HttpNotFound();
             }
-            return View(dailyLogMileageAndFuelReport);
+            return View(hourBreakdown);
         }
 
-        // GET: DailyLogMileageAndFuelReports/Create
+        // GET: HourBreakdowns/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: DailyLogMileageAndFuelReports/Create
+        // POST: HourBreakdowns/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Driver,DateofWork,Owner,Tractornumber,Trailernumber,Pronumber,State,Totalmilesdriven,Totalgaspurchased,Routestraveled,Odometerstart,Odometerfinish")] DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport)
+        public ActionResult Create([Bind(Include = "Id,Driver,Hoursworked,VehicleNumbers,Signature,CoDriver,OnDutyHours,OffDutyHours,OnDutyHours2,OffDutyHours2,OnDutyHours3,OffDutyHours3,TotalHours")] HourBreakdown hourBreakdown)
         {
             if (ModelState.IsValid)
             {
-                db.DailyLogMileageAndFuelReports.Add(dailyLogMileageAndFuelReport);
+                db.HourBreakdowns.Add(hourBreakdown);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(dailyLogMileageAndFuelReport);
+            return View(hourBreakdown);
         }
 
-        // GET: DailyLogMileageAndFuelReports/Edit/5
+        // GET: HourBreakdowns/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport = db.DailyLogMileageAndFuelReports.Find(id);
-            if (dailyLogMileageAndFuelReport == null)
+            HourBreakdown hourBreakdown = db.HourBreakdowns.Find(id);
+            if (hourBreakdown == null)
             {
                 return HttpNotFound();
             }
-            return View(dailyLogMileageAndFuelReport);
+            return View(hourBreakdown);
         }
 
-        // POST: DailyLogMileageAndFuelReports/Edit/5
+        // POST: HourBreakdowns/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Driver,DateofWork,Owner,Tractornumber,Trailernumber,Pronumber,State,Totalmilesdriven,Totalgaspurchased,Routestraveled,Odometerstart,Odometerfinish")] DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport)
+        public ActionResult Edit([Bind(Include = "Id,Driver,Hoursworked,VehicleNumbers,Signature,CoDriver,OnDutyHours,OffDutyHours,OnDutyHours2,OffDutyHours2,OnDutyHours3,OffDutyHours3,TotalHours")] HourBreakdown hourBreakdown)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(dailyLogMileageAndFuelReport).State = EntityState.Modified;
+                db.Entry(hourBreakdown).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(dailyLogMileageAndFuelReport);
+            return View(hourBreakdown);
         }
 
-        // GET: DailyLogMileageAndFuelReports/Delete/5
+        // GET: HourBreakdowns/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport = db.DailyLogMileageAndFuelReports.Find(id);
-            if (dailyLogMileageAndFuelReport == null)
+            HourBreakdown hourBreakdown = db.HourBreakdowns.Find(id);
+            if (hourBreakdown == null)
             {
                 return HttpNotFound();
             }
-            return View(dailyLogMileageAndFuelReport);
+            return View(hourBreakdown);
         }
 
-        // POST: DailyLogMileageAndFuelReports/Delete/5
+        // POST: HourBreakdowns/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DailyLogMileageAndFuelReport dailyLogMileageAndFuelReport = db.DailyLogMileageAndFuelReports.Find(id);
-            db.DailyLogMileageAndFuelReports.Remove(dailyLogMileageAndFuelReport);
+            HourBreakdown hourBreakdown = db.HourBreakdowns.Find(id);
+            db.HourBreakdowns.Remove(hourBreakdown);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

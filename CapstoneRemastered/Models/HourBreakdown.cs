@@ -9,6 +9,9 @@ namespace CapstoneRemastered.Models
     public class HourBreakdown
     {
         [Key]
+        public int Id { get; set; }
+        [Display(Name = "Driver")]
+        public string Driver { get; set; }
         [Display(Name = "Hours Worked")]
         public int Hoursworked { get; set; }
         [Display(Name = "Vehicle Numbers")]

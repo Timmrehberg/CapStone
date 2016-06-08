@@ -9,7 +9,7 @@ namespace CapstoneRemastered.Models
     public class DailyLogMileageAndFuelReport
     {
         [Key]
-
+        public int Id { get; set; }
         public string Driver { get; set; }
         [Display(Name = "Work Date")]
         public string DateofWork { get; set; }

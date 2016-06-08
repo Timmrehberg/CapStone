@@ -7,13 +7,13 @@ namespace CapstoneRemastered.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedHourLog : IMigrationMetadata
+    public sealed partial class Addeddriver : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedHourLog));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Addeddriver));
         
         string IMigrationMetadata.Id
         {
-            get { return "201606072213322_Added Hour Log"; }
+            get { return "201606081508157_Added driver"; }
         }
         
         string IMigrationMetadata.Source

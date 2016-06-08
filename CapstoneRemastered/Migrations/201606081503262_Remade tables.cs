@@ -3,10 +3,50 @@ namespace CapstoneRemastered.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Mademodel : DbMigration
+    public partial class Remadetables : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.DailyLogMileageAndFuelReports",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Driver = c.String(),
+                        DateofWork = c.String(),
+                        Owner = c.String(),
+                        Tractornumber = c.Int(nullable: false),
+                        Trailernumber = c.Int(nullable: false),
+                        Pronumber = c.Int(nullable: false),
+                        State = c.String(),
+                        Totalmilesdriven = c.Int(nullable: false),
+                        Totalgaspurchased = c.Double(nullable: false),
+                        Routestraveled = c.String(),
+                        Odometerstart = c.Int(nullable: false),
+                        Odometerfinish = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.HourBreakdowns",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Driver = c.String(),
+                        Hoursworked = c.Int(nullable: false),
+                        VehicleNumbers = c.String(),
+                        Signature = c.String(),
+                        CoDriver = c.String(),
+                        OnDutyHours = c.String(),
+                        OffDutyHours = c.String(),
+                        OnDutyHours2 = c.String(),
+                        OffDutyHours2 = c.String(),
+                        OnDutyHours3 = c.String(),
+                        OffDutyHours3 = c.String(),
+                        TotalHours = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -94,6 +134,8 @@ namespace CapstoneRemastered.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.HourBreakdowns");
+            DropTable("dbo.DailyLogMileageAndFuelReports");
         }
     }
 }
