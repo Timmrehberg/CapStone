@@ -210,6 +210,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HourBreakdownsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VehicleConditionReportsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,6 +222,22 @@
     <Compile Include="Migrations\201606081508157_Added driver.Designer.cs">
       <DependentUpon>201606081508157_Added driver.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606081727309_Added vehicle Report page.cs" />
+    <Compile Include="Migrations\201606081727309_Added vehicle Report page.Designer.cs">
+      <DependentUpon>201606081727309_Added vehicle Report page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606081729495_Added vehicle Keys.cs" />
+    <Compile Include="Migrations\201606081729495_Added vehicle Keys.Designer.cs">
+      <DependentUpon>201606081729495_Added vehicle Keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606081730143_Added vehicle Key.cs" />
+    <Compile Include="Migrations\201606081730143_Added vehicle Key.Designer.cs">
+      <DependentUpon>201606081730143_Added vehicle Key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606081841498_Added Condition Reports Tab.cs" />
+    <Compile Include="Migrations\201606081841498_Added Condition Reports Tab.Designer.cs">
+      <DependentUpon>201606081841498_Added Condition Reports Tab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DailyLogMileageAndFuelReport.cs" />
@@ -228,6 +245,7 @@
     <Compile Include="Models\HourBreakdown.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\VehicleConditionReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -302,6 +320,11 @@
     <Content Include="Views\HourBreakdowns\Details.cshtml" />
     <Content Include="Views\HourBreakdowns\Edit.cshtml" />
     <Content Include="Views\HourBreakdowns\Index.cshtml" />
+    <Content Include="Views\VehicleConditionReports\Create.cshtml" />
+    <Content Include="Views\VehicleConditionReports\Delete.cshtml" />
+    <Content Include="Views\VehicleConditionReports\Details.cshtml" />
+    <Content Include="Views\VehicleConditionReports\Edit.cshtml" />
+    <Content Include="Views\VehicleConditionReports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,6 +373,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606081508157_Added driver.resx">
       <DependentUpon>201606081508157_Added driver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606081727309_Added vehicle Report page.resx">
+      <DependentUpon>201606081727309_Added vehicle Report page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606081729495_Added vehicle Keys.resx">
+      <DependentUpon>201606081729495_Added vehicle Keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606081730143_Added vehicle Key.resx">
+      <DependentUpon>201606081730143_Added vehicle Key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606081841498_Added Condition Reports Tab.resx">
+      <DependentUpon>201606081841498_Added Condition Reports Tab.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

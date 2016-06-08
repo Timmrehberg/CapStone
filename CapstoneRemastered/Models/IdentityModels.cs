@@ -33,5 +33,7 @@ namespace CapstoneRemastered.Models
         public System.Data.Entity.DbSet<CapstoneRemastered.Models.DailyLogMileageAndFuelReport> DailyLogMileageAndFuelReports { get; set; }
 
         public System.Data.Entity.DbSet<CapstoneRemastered.Models.HourBreakdown> HourBreakdowns { get; set; }
+
+        public System.Data.Entity.DbSet<CapstoneRemastered.Models.VehicleConditionReport> VehicleConditionReports { get; set; }
     }
 }

@@ -1,0 +1,507 @@
+﻿@model IEnumerable<CapstoneRemastered.Models.VehicleConditionReport>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.brakeLinesToTrailerPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brakeLinesToTrailerPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.electricLinesToTrailerPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.electricLinesToTrailerPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.driveLinePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.driveLinePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.couplingDevicePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.couplingDevicePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tiresandWheelsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tiresandWheelsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.springsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.springsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bodyPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bodyPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.glassPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.glassPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torchesAndReflectorsAndLanternsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.torchesAndReflectorsAndLanternsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fusersPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fusersPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flagsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flagsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spareBulbsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spareBulbsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fusesPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fusesPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fireExtinquisherPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fireExtinquisherPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tireChainsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tireChainsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.afterStartingEnginePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.afterStartingEnginePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuelSystemPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuelSystemPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coolingSystemPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coolingSystemPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enginePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.enginePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leaksPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.leaksPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lightsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lightsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tailPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tailPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stopAndTurnPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stopAndTurnPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clearanceAndMarkerPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clearanceAndMarkerPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reflectorsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reflectorsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.airPressureWarningDevicePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.airPressureWarningDevicePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.oilPressurePre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.oilPressurePost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmmeterPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmmeterPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hornPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hornPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.windshieldWipersPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.windshieldWipersPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parkingBrakesPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.parkingBrakesPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clutchPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clutchPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transmissionPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transmissionPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rearVisionMirrorPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rearVisionMirrorPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sterringPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sterringPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceBreaksPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceBreaksPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.speedometerPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.speedometerPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherItemsPre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherItemsPost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vehicleNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mechanicsSignature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.driverSignature)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.brakeLinesToTrailerPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.brakeLinesToTrailerPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricLinesToTrailerPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.electricLinesToTrailerPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.driveLinePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.driveLinePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.couplingDevicePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.couplingDevicePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tiresandWheelsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tiresandWheelsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.springsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.springsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bodyPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bodyPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.glassPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.glassPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torchesAndReflectorsAndLanternsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.torchesAndReflectorsAndLanternsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fusersPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fusersPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flagsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flagsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spareBulbsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spareBulbsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fusesPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fusesPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fireExtinquisherPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fireExtinquisherPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tireChainsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tireChainsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.afterStartingEnginePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.afterStartingEnginePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuelSystemPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fuelSystemPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coolingSystemPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coolingSystemPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enginePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.enginePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leaksPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.leaksPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lightsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lightsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tailPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tailPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stopAndTurnPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stopAndTurnPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clearanceAndMarkerPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clearanceAndMarkerPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reflectorsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reflectorsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.airPressureWarningDevicePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.airPressureWarningDevicePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.oilPressurePre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.oilPressurePost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmmeterPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmmeterPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hornPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hornPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.windshieldWipersPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.windshieldWipersPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.parkingBrakesPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.parkingBrakesPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clutchPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clutchPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transmissionPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transmissionPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rearVisionMirrorPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rearVisionMirrorPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sterringPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sterringPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serviceBreaksPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serviceBreaksPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.speedometerPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.speedometerPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherItemsPre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherItemsPost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vehicleNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mechanicsSignature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.driverSignature)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
